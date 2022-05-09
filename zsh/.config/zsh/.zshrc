@@ -25,7 +25,7 @@ autoload -U down-line-or-beginning-search
 zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search
 
-# FZF 
+# FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 # [ -f $ZDOTDIR/completion/_fnm ] && fpath+="$ZDOTDIR/completion/"
 # export FZF_DEFAULT_COMMAND='rg --hidden -l ""'
@@ -80,6 +80,9 @@ autoload edit-command-line; zle -N edit-command-line
 # Environment variables set everywhere
 export EDITOR="nvim"
 
+
 # add private key to ssh-agent to enable ssh to github
 eval $(ssh-agent -s)
-ssh-add ~/.ssh/github_id_rsa
+ssh-add ~/.ssh/github_id_ed25519
+
+
