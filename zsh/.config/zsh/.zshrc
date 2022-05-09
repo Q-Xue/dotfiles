@@ -82,7 +82,7 @@ export EDITOR="nvim"
 
 
 
---------------------- individual zshrc config ------------------------
+# --------------------- individual zshrc config ------------------------
 zsh_add_file "zsh-individual-config"
 
 
