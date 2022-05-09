@@ -1,9 +1,0 @@
-[user]
-	name = etg
-	email = eidano_x@qq.com
-[alias]
-  dog = log --all --decorate --oneline --graph
-  br = branch
-  co = checkout
-  st = status
-  ci = commit
