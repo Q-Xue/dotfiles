@@ -121,6 +121,8 @@ require("packer").startup({
     -- ----------------- show and trim trailing whitespaces -------------------
     use {'jdhao/whitespace.nvim', event = 'VimEnter'}
 
+    -- ----------------- rooter -------------------
+    use({"airblade/vim-rooter", event = "VimEnter"})
 
 
 
