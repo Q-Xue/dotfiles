@@ -1,0 +1,6 @@
+# need to find the key sequences the terminal recognize using the command
+# showkey -a
+# on windows terminal-preview, the character sequence corresponding to ctrl-rightarrow
+# is '^[[1;5C' so
+
+bindkey '^[[1;5C' forward-word  # bind ctrl-rightarrow to forward-word
