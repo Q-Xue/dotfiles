@@ -81,8 +81,8 @@ autoload edit-command-line; zle -N edit-command-line
 export EDITOR="nvim"
 
 
-# add private key to ssh-agent to enable ssh to github
-eval $(ssh-agent -s)
-ssh-add ~/.ssh/github_id_ed25519
+
+--------------------- individual zshrc config ------------------------
+zsh_add_file "zsh-individual-config"
 
 
