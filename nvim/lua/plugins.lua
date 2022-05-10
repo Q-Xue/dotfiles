@@ -124,7 +124,8 @@ require("packer").startup({
     -- ----------------- rooter -------------------
     use({"airblade/vim-rooter", event = "VimEnter"})
 
-
+    -- -------------------- vimtex --------------------------
+    use({ "lervag/vimtex", ft = { "tex" } })
 
 
 
