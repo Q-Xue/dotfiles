@@ -15,7 +15,7 @@ call utils#Cabbrev('ps', 'PackerSync')
 " configuration for vimscript plugins
 " ----------------------------------------------------------------------
 
-"--- commentary ---
+"--------------------------- commentary --------------------------
 nnoremap <leader>/ :Commentary<CR>
 
 "-------------------------- vim-matchup settings ---------------------------
@@ -32,3 +32,26 @@ let g:matchup_delim_noskips = 0
 
 " Show offscreen match pair in popup window
 let g:matchup_matchparen_offscreen = {'method': 'popup'}
+
+"-------------------------- vimtex --------------------------
+let g:vimtex_view_general_viewer = 'SumatraPDF.exe'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
