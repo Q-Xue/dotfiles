@@ -60,8 +60,8 @@ require("packer").startup({
 
     -- ------------------- lsp --------------------
     -- nvim-lsp configuration (it relies on cmp-nvim-lsp, so it should be loaded after cmp-nvim-lsp).
-    use({ "neovim/nvim-lspconfig", after = "cmp-nvim-lsp" })
-    use { 'williamboman/nvim-lsp-installer', after = "nvim-lspconfig", config = [[require('config.lsp')]]}
+    use { 'williamboman/nvim-lsp-installer'}
+    use({ "neovim/nvim-lspconfig", after = {"cmp-nvim-lsp","nvim-lsp-installer"}, config = [[require('config.lsp')]]})
 
     -- -------------------- treesitter -------------------
     use({ "nvim-treesitter/nvim-treesitter", event = 'BufEnter', run = ":TSUpdate", config = [[require('config.treesitter')]] })
