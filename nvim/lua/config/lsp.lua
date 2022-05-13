@@ -72,7 +72,7 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 local lspconfig = require("lspconfig")
 
-if utils.executable('pylsp') then
+-- if utils.executable('pylsp') then
   lspconfig.pylsp.setup({
     on_attach = custom_attach,
     settings = {
@@ -92,9 +92,9 @@ if utils.executable('pylsp') then
     },
     capabilities = capabilities,
   })
-else
-  vim.notify("pylsp not found!", 'warn', {title = 'Nvim-config'})
-end
+-- else
+--   vim.notify("pylsp not found!", 'warn', {title = 'Nvim-config'})
+-- end
 
 
 lspconfig.sumneko_lua.setup({
