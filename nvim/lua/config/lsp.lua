@@ -126,6 +126,17 @@ lspconfig.sumneko_lua.setup({
   })
 
 
+lspconfig.texlab.setup({
+    on_attach = custom_attach,
+    -- cmd = { sumneko_binary_path, "-E", sumneko_root_path .. "/main.lua" },
+    settings = {
+    },
+    capabilities = capabilities,
+  })
+
+
+
+
 -- Change diagnostic signs.
 vim.fn.sign_define("DiagnosticSignError", { text = "✗", texthl = "DiagnosticSignError" })
 vim.fn.sign_define("DiagnosticSignWarn", { text = "!", texthl = "DiagnosticSignWarn" })
