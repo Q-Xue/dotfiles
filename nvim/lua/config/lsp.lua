@@ -134,6 +134,14 @@ lspconfig.texlab.setup({
     capabilities = capabilities,
   })
 
+lspconfig.vimls.setup({
+    on_attach = custom_attach,
+    flags = {
+      debounce_text_changes = 500,
+    },
+    capabilities = capabilities,
+  })
+
 
 
 
