@@ -50,7 +50,11 @@ let g:vimtex_compiler_latexmk = {
     \ ],
     \}
 
-
+let g:vimtex_quickfix_ignore_filters = [
+  \'Underfull \\hbox (badness [0-9]*) in ',
+  \'Overfull \\hbox ([0-9]*.[0-9]*pt too wide) ',
+  \'FandolSong-Regular'
+  \]
 
 
 
