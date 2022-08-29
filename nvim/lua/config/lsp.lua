@@ -72,7 +72,7 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 local lspconfig = require("lspconfig")
 
-if utils.executable('pylsp') then
+-- if utils.executable('pylsp') then
   lspconfig.pylsp.setup({
     on_attach = custom_attach,
     settings = {
@@ -92,9 +92,9 @@ if utils.executable('pylsp') then
     },
     capabilities = capabilities,
   })
-else
-  vim.notify("pylsp not found!", 'warn', {title = 'Nvim-config'})
-end
+-- else
+--   vim.notify("pylsp not found!", 'warn', {title = 'Nvim-config'})
+-- end
 
 
 lspconfig.sumneko_lua.setup({
@@ -124,6 +124,25 @@ lspconfig.sumneko_lua.setup({
     },
     capabilities = capabilities,
   })
+
+
+lspconfig.texlab.setup({
+    on_attach = custom_attach,
+    -- cmd = { sumneko_binary_path, "-E", sumneko_root_path .. "/main.lua" },
+    settings = {
+    },
+    capabilities = capabilities,
+  })
+
+lspconfig.vimls.setup({
+    on_attach = custom_attach,
+    flags = {
+      debounce_text_changes = 500,
+    },
+    capabilities = capabilities,
+  })
+
+
 
 
 -- Change diagnostic signs.
