@@ -6,3 +6,8 @@ DARK_COLOR='seashells.yaml'
 alias day="alacritty-colorscheme -V apply $LIGHT_COLOR"
 alias night="alacritty-colorscheme -V apply $DARK_COLOR"
 alias toggle="alacritty-colorscheme -V toggle $LIGHT_COLOR $DARK_COLOR"
+
+
+#-------- ssh config ----------#
+eval $(ssh-agent -s)
+ssh-add ~/.ssh/github_id_rsa
