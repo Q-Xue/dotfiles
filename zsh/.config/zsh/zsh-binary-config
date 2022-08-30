@@ -1,0 +1,8 @@
+#-------- alacritty config --------#
+#-- colorscheme
+LIGHT_COLOR='night_owlish_light.yaml'
+DARK_COLOR='seashells.yaml'
+
+alias day="alacritty-colorscheme -V apply $LIGHT_COLOR"
+alias night="alacritty-colorscheme -V apply $DARK_COLOR"
+alias toggle="alacritty-colorscheme -V toggle $LIGHT_COLOR $DARK_COLOR"

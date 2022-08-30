@@ -84,6 +84,7 @@ export EDITOR="nvim"
 
 # --------------------- individual zshrc config ------------------------
 # TODO: put a condition check, if z-i-c file does not exist, echo "should create one!"
-zsh_add_file "zsh-individual-config"
+zsh_add_file "zsh-binary-config"
+# zsh_add_file "zsh-individual-config"
 
 
