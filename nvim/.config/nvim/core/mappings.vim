@@ -13,7 +13,7 @@ nnoremap <C-q> :wq!<CR>
 nnoremap ; :
 vnoremap ; :
 
-nnoremap <silent> <F2> :call utils#ToggleQuickFix()<cr>
+nnoremap <silent> <leader>n :call utils#ToggleQuickFix()<cr>
 
 nnoremap <Left> <C-W>h
 nnoremap <Right> <C-W>l
