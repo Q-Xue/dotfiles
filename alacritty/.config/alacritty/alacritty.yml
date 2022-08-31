@@ -47,8 +47,8 @@ window:
   # Blank space added around the window in pixels. This padding is scaled
   # by DPI and the specified value is always added at both opposing sides.
   padding:
-   x: 5
-   y: 0
+    x: 5
+    y: 0
 
   # Spread additional padding evenly around the terminal content.
   #dynamic_padding: false
@@ -773,7 +773,7 @@ font:
 # If the same trigger is assigned to multiple actions, all of them are executed
 # in the order they were defined in.
 key_bindings:
-  - { key: F,   mods: Command,           action: ToggleFullscreen }
+  - {key: F, mods: Command, action: ToggleFullscreen}
   #- { key: Paste,                                       action: Paste          }
   #- { key: Copy,                                        action: Copy           }
   #- { key: L,         mods: Control,                    action: ClearLogNotice }
