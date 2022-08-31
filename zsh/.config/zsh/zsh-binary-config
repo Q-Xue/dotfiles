@@ -8,12 +8,12 @@ alias night="alacritty-colorscheme -V apply $DARK_COLOR"
 alias toggle="alacritty-colorscheme -V toggle $LIGHT_COLOR $DARK_COLOR"
 
 
-#-------- ssh config ----------#
-# this method does not work generally, a general way should check it ssh-agent process is already running
-if [[ ! -v SSHA_START ]]
-then
-    eval $(ssh-agent -s)
-    ssh-add ~/.ssh/github_id_rsa
-    export SSHA_START=1
-    echo ssh started
-fi
+##-------- ssh config ----------#
+## this method does not work generally, a general way should check it ssh-agent process is already running
+#if [[ ! -v SSHA_START ]]
+#then
+#    eval $(ssh-agent -s)
+#    ssh-add ~/.ssh/github_id_rsa
+#    export SSHA_START=1
+#    echo ssh started
+#fi
