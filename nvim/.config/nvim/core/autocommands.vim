@@ -21,3 +21,8 @@ augroup END
 "   autocmd VimEnter * :call s:uncap()
 " augroup END
 
+" ctags
+augroup ctag_auto_update
+    autocmd!
+    autocmd BufWritePost *.py silent !ctags -R .
+augroup END

@@ -14,12 +14,6 @@ function! s:theme_setup_dict.onedark() dict abort
   colorscheme onedark
 endfunction
 
-function! s:theme_setup_dict.edge() dict abort
-  let g:edge_enable_italic = 1
-  let g:edge_better_performance = 1
-  colorscheme edge
-endfunction
-
 function! s:theme_setup_dict.sonokai() dict abort
   let g:sonokai_enable_italic = 1
   let g:sonokai_better_performance = 1
@@ -51,7 +45,6 @@ endfunction
 let s:theme2dir = {
       \ 'gruvbox8' : 'vim-gruvbox8',
       \ 'onedark': 'onedark.nvim',
-      \ 'edge' : 'edge',
       \ 'sonokai': 'sonokai',
       \ 'gruvbox_material': 'gruvbox-material',
       \ 'everforest' :'everforest',

@@ -34,12 +34,20 @@ let g:matchup_delim_noskips = 0
 let g:matchup_matchparen_offscreen = {'method': 'popup'}
 
 "-------------------------- vimtex --------------------------
-let g:vimtex_view_general_viewer = 'SumatraPDF.exe'
 
 if g:is_win
+    let g:vimtex_view_general_viewer = 'SumatraPDF.exe'
     let g:vimtex_view_general_options = '-reuse-instance -forward-search @tex @line @pdf'
 endif
 
+if g:is_linux
+    let g:vimtex_view_general_viewer = 'okular'
+    let g:vimtex_view_general_options = '--unique file:@pdf\#src:@line@tex'
+endif
+
+" if g:is_linux
+"     let g:vimtex_view_general_viewer = 'zathura'
+" endif
 
 let g:vimtex_compiler_latexmk = {
     \ 'build_dir' : '',

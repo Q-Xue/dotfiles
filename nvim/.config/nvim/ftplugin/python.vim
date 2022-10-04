@@ -35,6 +35,20 @@ augroup PyEnv
 augroup end
 
 
+"---------------- set PYTHONPATH ---------------"
+function! s:SetPYTHONPATH()
+    if g:is_win
+        return
+    elseif g:is_linux || g:is_mac
+        let $PYTHONPATH = getcwd() . '/venv/lib/python3.8/site-packages' . ':' . $PYTHONPATH
+    endif
+endfunction
+
+augroup PATHONPATH
+  autocmd!
+  au BufEnter *.py call s:SetPYTHONPATH()
+augroup end
+
 "---------------- compiler ---------------"
 function! s:SetCompiler()
     if g:is_win

@@ -105,15 +105,23 @@ telescope.load_extension('fzf')
 local opts = { silent = true,}
 -- vim.keymap.set("n", "tff", ":Telescope find_files<CR>", opts)
 vim.keymap.set("n", "tff", "<cmd>lua require('telescope.builtin').find_files()<cr>", opts)
-vim.keymap.set("n", "tg", "<cmd>lua require('telescope.builtin').live_grep()<cr>", opts)
+vim.keymap.set("n", "tlg", "<cmd>lua require('telescope.builtin').live_grep()<cr>", opts)
+
+-- live grep in specific dir
+_G.telescope_live_grep_in_path = function(path)
+    local _path = path or vim.fn.input("Dir: ", "", "dir")
+    require("telescope.builtin").live_grep({search_dirs = {_path}})
+end
+
+-- find files in specific path
+_G.telescope_find_files_in_path = function(path)
+    local _path = path or vim.fn.input("Dir: ", "", "dir")
+    require("telescope.builtin").find_files({search_dirs = {_path}})
+end
 
 
-
-
-
-
-
-
+vim.keymap.set("n", "tgd", "<cmd>lua telescope_live_grep_in_path()<cr>", opts)
+vim.keymap.set("n", "tfd", "<cmd>lua telescope_find_files_in_path()<cr>", opts)
 
 
 

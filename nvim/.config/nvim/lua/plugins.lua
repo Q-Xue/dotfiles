@@ -66,6 +66,9 @@ require("packer").startup({
     -- -------------------- treesitter -------------------
     use({ "nvim-treesitter/nvim-treesitter", event = 'BufEnter', run = ":TSUpdate", config = [[require('config.treesitter')]] })
 
+    -- -------------------- Markit -------------------
+    use 'David-Kunz/markid'
+
     -- -------------------- telescope --------------------
     use {'nvim-telescope/telescope-fzf-native.nvim', event = 'BufEnter', run = 'make' }
     use {
@@ -125,7 +128,7 @@ require("packer").startup({
     use({"airblade/vim-rooter", event = "VimEnter"})
 
     -- -------------------- vimtex --------------------------
-    use({ "lervag/vimtex", ft = { "tex" } })
+    use "lervag/vimtex"
 
     -- -------------------- surround --------------------------
     use({"machakann/vim-sandwich", event = "VimEnter"})

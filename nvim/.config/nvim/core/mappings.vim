@@ -24,3 +24,6 @@ nnoremap <M-h> <C-W>h
 nnoremap <M-l> <C-W>l
 nnoremap <M-k> <C-W>k
 nnoremap <M-j> <C-W>j
+
+"--- zen-mode toggle
+nnoremap <leader>z :ZenMode<CR>
