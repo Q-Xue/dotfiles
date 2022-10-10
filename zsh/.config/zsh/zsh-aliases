@@ -12,6 +12,8 @@ alias ll='ls -lF'
 alias la='ls -aF'
 alias lla='ls -laF'
 
+alias sd='sudo docker'
+
 # alias lvim='nvim -u ~/.local/share/lunarvim/lvim/init.lua --cmd "set runtimepath+=~/.local/share/lunarvim/lvim"'
 
 # # get fastest mirrors

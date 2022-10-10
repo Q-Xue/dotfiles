@@ -4,3 +4,7 @@
 # is '^[[1;5C' so
 
 bindkey '^[[1;5C' forward-word  # bind ctrl-rightarrow to forward-word
+
+
+#------------- switch CapsLock and Esc ---------------#
+setxkbmap -option "caps:swapescape"

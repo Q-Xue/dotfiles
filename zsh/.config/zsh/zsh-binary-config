@@ -17,3 +17,7 @@ alias toggle="alacritty-colorscheme -V toggle $LIGHT_COLOR $DARK_COLOR"
 #    export SSHA_START=1
 #    echo ssh started
 #fi
+
+#------- rustup mirror -------#
+export RUSTUP_DIST_SERVER="https://rsproxy.cn"
+export RUSTUP_UPDATE_ROOT="https://rsproxy.cn/rustup"

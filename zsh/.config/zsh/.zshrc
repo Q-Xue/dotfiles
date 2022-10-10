@@ -35,10 +35,10 @@ compinit
 # ------------------------ Colors -------------------------
 autoload -Uz colors && colors
 
-# Useful Functions
+# ------------------------ Useful Functions ----------------------
 source "$ZDOTDIR/zsh-functions"
 
-# Normal files to source
+# ------------------------ Normal files to source ----------------------
 zsh_add_file "zsh-exports"
 zsh_add_file "zsh-vim-mode"
 zsh_add_file "zsh-aliases"
@@ -47,7 +47,7 @@ zsh_add_file "zsh-prompt-greg"
 zsh_add_file "zsh-hooks"
 zsh_add_file "zsh-bindkey"
 
-# Plugins
+# ----------------------- Plugins ------------------------
 zsh_add_plugin "zsh-users/zsh-autosuggestions"
 zsh_add_plugin "zsh-users/zsh-syntax-highlighting"
 zsh_add_plugin "hlissner/zsh-autopair"

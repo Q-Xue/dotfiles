@@ -27,3 +27,6 @@ nnoremap <M-j> <C-W>j
 
 "--- zen-mode toggle
 nnoremap <leader>z :ZenMode<CR>
+
+"--- lsp format
+nnoremap <leader>lf :lua vim.lsp.buf.format()<CR>
