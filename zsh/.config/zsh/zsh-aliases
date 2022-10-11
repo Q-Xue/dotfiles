@@ -1,7 +1,6 @@
 #!/bin/sh
-alias j='z'
-alias f='zi'
-alias g='lazygit'
+# alias j='z'
+# alias f='zi'
 alias zsh-update-plugins="find "$ZDOTDIR/plugins" -type d -exec test -e '{}/.git' ';' -print0 | xargs -I {} -0 git -C {} pull -q"
 alias nvimrc='nvim ~/.config/nvim/'
 alias nv='nvim'
@@ -13,6 +12,14 @@ alias la='ls -aF'
 alias lla='ls -laF'
 
 alias sd='sudo docker'
+
+#----------- git -----------#
+# alias g='lazygit'
+alias g='git'
+alias gaa='git add --all'
+alias gst='git status'
+alias gcim='git commit -m'
+alias gb='git branch'
 
 # alias lvim='nvim -u ~/.local/share/lunarvim/lvim/init.lua --cmd "set runtimepath+=~/.local/share/lunarvim/lvim"'
 
@@ -45,15 +52,6 @@ alias psmem='ps auxf | sort -nr -k 4 | head -5'
 
 # get top process eating cpu ##
 alias pscpu='ps auxf | sort -nr -k 3 | head -5'
-
-# # gpg encryption
-# # verify signature for isos
-# alias gpg-check="gpg2 --keyserver-options auto-key-retrieve --verify"
-# # receive the key of a developer
-# alias gpg-retrieve="gpg2 --keyserver-options auto-key-retrieve --receive-keys"
-
-# # For when keys break
-# alias archlinx-fix-keys="sudo pacman-key --init && sudo pacman-key --populate archlinux && sudo pacman-key --refresh-keys"
 
 # systemd
 # alias mach_list_systemctl="systemctl list-unit-files --state=enabled"

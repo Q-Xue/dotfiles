@@ -7,3 +7,7 @@
   co = checkout
   st = status
   ci = commit
+[init]
+	defaultBranch = main
+[merge]
+	conflictStyle = diff3
