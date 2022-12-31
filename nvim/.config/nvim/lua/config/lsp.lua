@@ -1,4 +1,6 @@
-require("nvim-lsp-installer").setup {}
+-- require("nvim-lsp-installer").setup {}
+require("mason").setup {}
+require("mason-lspconfig").setup {}
 
 local api = vim.api
 local lsp = vim.lsp

@@ -60,10 +60,11 @@ require("packer").startup({
 
     -- ------------------- lsp --------------------
     -- nvim-lsp configuration (it relies on cmp-nvim-lsp, so it should be loaded after cmp-nvim-lsp).
-    use { 'williamboman/nvim-lsp-installer'}
+    -- use { 'williamboman/nvim-lsp-installer'}
     -- mason to completely replace nvim-lsp-installer
-    -- use { 'williamboman/mason.nvim'}
-    use({ "neovim/nvim-lspconfig", after = {"cmp-nvim-lsp","nvim-lsp-installer"}, config = [[require('config.lsp')]]})
+    use { 'williamboman/mason.nvim'}
+    use { 'williamboman/mason-lspconfig.nvim'}
+    use({ "neovim/nvim-lspconfig", after = {"cmp-nvim-lsp","mason-lspconfig.nvim"}, config = [[require('config.lsp')]]})
 
     -- -------------------- treesitter -------------------
     use({ "nvim-treesitter/nvim-treesitter", event = 'BufEnter', run = ":TSUpdate", config = [[require('config.treesitter')]] })
@@ -135,6 +136,8 @@ require("packer").startup({
     -- -------------------- surround --------------------------
     use({"machakann/vim-sandwich", event = "VimEnter"})
 
+    -- -------------------- mundo --------------------------
+    use({"simnalamburt/vim-mundo", event = "VimEnter"})
 
 
   end,

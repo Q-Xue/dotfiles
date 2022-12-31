@@ -17,7 +17,6 @@ end
 
 nvim_tree.setup {
   auto_reload_on_write = true,
-  create_in_closed_folder = true,
   disable_netrw = true,
   hijack_netrw = true,
   open_on_setup = false,

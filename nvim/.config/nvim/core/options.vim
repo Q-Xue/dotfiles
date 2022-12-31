@@ -127,7 +127,7 @@ set cmdheight=2
 set autoindent
 set smartindent
 set colorcolumn=80
-set path+=**
+" set path+=**
 set diffopt+=vertical
 set cursorline
 set grepprg=rg\ --vimgrep\ --smart-case\ --follow
