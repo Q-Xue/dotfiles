@@ -2,6 +2,8 @@
 local cmp = require'cmp'
 local lspkind = require'lspkind'
 
+vim.opt.completeopt = {'menu','menuone','noselect'}
+
 cmp.setup({
   snippet = {
     expand = function(args)

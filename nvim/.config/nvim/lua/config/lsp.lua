@@ -74,47 +74,51 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 local lspconfig = require("lspconfig")
 
--- if utils.executable('pylsp') then
-  lspconfig.pylsp.setup({
-    on_attach = custom_attach,
-    settings = {
-      pylsp = {
-        plugins = {
-          pylint = { enabled = true, executable = "pylint" },
-          pyflakes = { enabled = false },
-          pycodestyle = { enabled = false },
-          jedi_completion = { fuzzy = true },
-          pyls_isort = { enabled = true },
-          pylsp_mypy = { enabled = true },
-        },
-      },
-    },
-    flags = {
-      debounce_text_changes = 200,
-    },
-    capabilities = capabilities,
-  })
-
-
-  -- lspconfig.pyright.setup({
+  -- lspconfig.jedi_language_server.setup({
   --   on_attach = custom_attach,
-  --   -- settings = {
-  --   --   pylsp = {
-  --   --     plugins = {
-  --   --       pylint = { enabled = true, executable = "pylint" },
-  --   --       pyflakes = { enabled = false },
-  --   --       pycodestyle = { enabled = false },
-  --   --       jedi_completion = { fuzzy = true },
-  --   --       pyls_isort = { enabled = true },
-  --   --       pylsp_mypy = { enabled = true },
-  --   --     },
-  --   --   },
-  --   -- },
-  --   -- flags = {
-  --   --   debounce_text_changes = 200,
-  --   -- },
+  --   settings = {
+  --     pylsp = {
+  --       plugins = {
+  --         pylint = { enabled = true, executable = "pylint" },
+  --         pyflakes = { enabled = false },
+  --         pycodestyle = { enabled = false },
+  --         jedi_completion = { fuzzy = true },
+  --         pyls_isort = { enabled = true },
+  --         pylsp_mypy = { enabled = true },
+  --       },
+  --     },
+  --   },
+  --   flags = {
+  --     debounce_text_changes = 200,
+  --   },
   --   capabilities = capabilities,
   -- })
+
+  -- lspconfig.pylsp.setup({
+  --   on_attach = custom_attach,
+  --   settings = {
+  --     pylsp = {
+  --       plugins = {
+  --         pylint = { enabled = true, executable = "pylint" },
+  --         pyflakes = { enabled = false },
+  --         pycodestyle = { enabled = false },
+  --         jedi_completion = { fuzzy = true },
+  --         pyls_isort = { enabled = true },
+  --         pylsp_mypy = { enabled = true },
+  --       },
+  --     },
+  --   },
+  --   flags = {
+  --     debounce_text_changes = 200,
+  --   },
+  --   capabilities = capabilities,
+  -- })
+
+
+  lspconfig.pyright.setup({
+    on_attach = custom_attach,
+    capabilities = capabilities,
+  })
 
 
 -- else
@@ -127,12 +131,12 @@ lspconfig.sumneko_lua.setup({
     -- cmd = { sumneko_binary_path, "-E", sumneko_root_path .. "/main.lua" },
     settings = {
       Lua = {
-        -- runtime = {
-        --   -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
-        --   version = "LuaJIT",
-        --   -- Setup your lua path
-        --   path = runtime_path,
-        -- },
+        runtime = {
+          -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
+          version = "LuaJIT",
+          -- Setup your lua path
+          path = runtime_path,
+        },
         diagnostics = {
           -- Get the language server to recognize the `vim` global
           globals = { "vim" },
@@ -140,6 +144,7 @@ lspconfig.sumneko_lua.setup({
         workspace = {
           -- Make the server aware of Neovim runtime files
           library = api.nvim_get_runtime_file("", true),
+          checkThirdParty = false,
         },
         -- Do not send telemetry data containing a randomized but unique identifier
         telemetry = {
