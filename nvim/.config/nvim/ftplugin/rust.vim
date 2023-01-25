@@ -10,7 +10,7 @@ function! s:SetCompiler()
         execute 'setlocal makeprg=cargo\ run'
 endfunction
 
-augroup PyCompiler
+augroup RustCompiler
   autocmd!
   au BufEnter *.rs call s:SetCompiler()
 augroup end
