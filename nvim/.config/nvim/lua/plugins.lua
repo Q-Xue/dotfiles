@@ -60,8 +60,6 @@ require("packer").startup({
 
     -- ------------------- lsp --------------------
     -- nvim-lsp configuration (it relies on cmp-nvim-lsp, so it should be loaded after cmp-nvim-lsp).
-    -- use { 'williamboman/nvim-lsp-installer'}
-    -- mason to completely replace nvim-lsp-installer
     use { 'williamboman/mason.nvim'}
     use { 'williamboman/mason-lspconfig.nvim'}
     use({ "neovim/nvim-lspconfig", after = {"cmp-nvim-lsp","mason-lspconfig.nvim"}, config = [[require('config.lsp')]]})

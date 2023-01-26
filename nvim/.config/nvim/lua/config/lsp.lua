@@ -5,7 +5,7 @@ require("mason-lspconfig").setup {}
 local api = vim.api
 local lsp = vim.lsp
 
-local utils = require("utils")
+-- local utils = require("utils")
 
 local custom_attach = function(client, bufnr)
   -- Mappings.
