@@ -1,3 +1,10 @@
+# get rid of the login message for Mac system
+# ref[] https://stackoverflow.com/questions/15769615/remove-last-login-message-for-new-tabs-in-terminal
+if [ "$(uname)" = "Darwin" ]; then
+    printf '\33c\e[3J'
+fi
+
+#---------------------- packager manager -------------------#
 # Created by Zap installer
 [ -f "$HOME/.local/share/zap/zap.zsh" ] && source "$HOME/.local/share/zap/zap.zsh"
 plug "zsh-users/zsh-autosuggestions"
