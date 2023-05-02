@@ -96,8 +96,8 @@ window:
   # Values for `startup_mode` (macOS only):
   #   - SimpleFullscreen
   #startup_mode: Windowed
-  # startup_mode: Fullscreen
-  startup_mode: SimpleFullscreen
+  startup_mode: Fullscreen
+  # startup_mode: SimpleFullscreen
 
   # Window title
   #title: Alacritty
