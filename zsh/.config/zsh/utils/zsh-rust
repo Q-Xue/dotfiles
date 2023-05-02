@@ -1,0 +1,10 @@
+#!/usr/bin/env zsh
+
+# if cargo is installed on the system, add it to $PATH
+if [ -f "$HOME/.cargo/env" ]; then
+    . "$HOME/.cargo/env"
+fi
+
+# rustup mirror
+export RUSTUP_DIST_SERVER="https://rsproxy.cn"
+export RUSTUP_UPDATE_ROOT="https://rsproxy.cn/rustup"

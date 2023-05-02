@@ -1,0 +1,29 @@
+# branching for different system
+# 1
+case "$(uname)" in
+  Darwin*)
+    if [ -x /usr/libexec/java_home ]; then
+      if /usr/libexec/java_home &> /dev/null ; then
+        if /usr/libexec/java_home -v1.8.0 &> /dev/null; then
+          export JAVA_HOME=$(/usr/libexec/java_home -v1.8.0)
+        else
+          export JAVA_HOME=$(/usr/libexec/java_home)
+        fi
+      fi
+    fi
+    ;;
+  Linux*)
+    export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
+    ;;
+esac
+
+# 2
+if [ "$(uname)" = "Linux" ]; then
+    setxkbmap -option "caps:swapescape"
+fi
+
+# if a file exists
+if [ ! -f /tmp/foo.txt ]; then
+    echo "File not found!" >&2
+    exit 1
+fi

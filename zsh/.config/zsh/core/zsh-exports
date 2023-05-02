@@ -1,0 +1,19 @@
+#!/bin/sh
+# HISTFILE="$XDG_DATA_HOME"/zsh/history
+HISTSIZE=1000000
+SAVEHIST=1000000
+
+# add link file folder to PATH
+export PATH="/home/etg/.local/bin:$PATH"
+
+# Environment variables set everywhere
+export EDITOR="nvim"
+
+
+
+#---------------------- add http and https proxy for shell ----------------------
+alias proxy="export http_proxy=http://127.0.0.1:7890;export https_proxy=https://127.0.0.1:7890"
+alias unproxy="unset http_proxy;unset https_proxy"
+
+
+

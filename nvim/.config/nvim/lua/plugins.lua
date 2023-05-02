@@ -1,5 +1,5 @@
 local fn = vim.fn
-local utils = require("utils")
+-- local utils = require("utils")
 
 --  ----------------------------------------------------------------------------------
 -- install packer into pack directory if it is not installed yet
@@ -8,8 +8,9 @@ vim.g.package_home = fn.stdpath("data") .. "/site/pack/packer/"
 local packer_install_dir = vim.g.package_home .. "/opt/packer.nvim"
 
 -- local plug_url_format = "https://hub.fastgit.org/%s"
-local plug_url_format = "https://github.91chi.fun/https://github.com/%s"
+-- local plug_url_format = "https://github.91chi.fun/https://github.com/%s"
 -- local plug_url_format = ""
+local plug_url_format = "git@github.com:%s"
 -- if vim.g.is_linux then
 --  plug_url_format = "https://hub.fastgit.xyz/%s"
 -- else
@@ -93,7 +94,7 @@ require("packer").startup({
     -- -------------------------- Comment ---------------------------
     use({"tpope/vim-commentary"})
 
-    use {'kyazdani42/nvim-web-devicons'}
+    use {'nvim-tree/nvim-web-devicons'}
 
     -- -------------------------- statusline ------------------------
     use { 'nvim-lualine/lualine.nvim', config = [[require('config.statusline')]] }

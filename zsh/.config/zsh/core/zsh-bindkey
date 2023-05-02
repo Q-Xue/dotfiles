@@ -3,8 +3,10 @@
 # on windows terminal-preview, the character sequence corresponding to ctrl-rightarrow
 # is '^[[1;5C' so
 
-bindkey '^[[1;5C' forward-word  # bind ctrl-rightarrow to forward-word
+# bindkey '^[[1;5C' forward-word  # bind ctrl-rightarrow to forward-word
 
 
 #------------- switch CapsLock and Esc ---------------#
-setxkbmap -option "caps:swapescape"
+if [ "$(uname)" = "Linux" ]; then
+    setxkbmap -option "caps:swapescape"
+fi

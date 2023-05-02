@@ -1,0 +1,2 @@
+# add nvim to path
+export PATH=$PATH:~/bin/nvim-macos/bin

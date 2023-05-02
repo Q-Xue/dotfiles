@@ -1,106 +1,45 @@
-#!/bin/sh
-HISTFILE=~/.zsh_history
-setopt appendhistory
-
-# some useful options (man zshoptions)
-setopt autocd extendedglob nomatch menucomplete
-setopt interactive_comments
-stty stop undef		# Disable ctrl-s to freeze terminal.
-zle_highlight=('paste:none')
-
-# beeping is annoying
-unsetopt BEEP
+# Created by Zap installer
+[ -f "$HOME/.local/share/zap/zap.zsh" ] && source "$HOME/.local/share/zap/zap.zsh"
+plug "zsh-users/zsh-autosuggestions"
+plug "zap-zsh/supercharge"
+# plug "zap-zsh/zap-prompt"
+plug "zsh-users/zsh-syntax-highlighting"
 
 
-# -------------------------- completions ------------------------
-autoload -Uz compinit
-zstyle ':completion:*' menu select
-# zstyle ':completion::complete:lsof:*' menu yes select
-zmodload zsh/complist
-# compinit
-_comp_options+=(globdots)		# Include hidden files.
+#---------------------- basic settings ---------------------#
+# options
+plug "$ZDOTDIR/core/zsh-options"
 
-autoload -U up-line-or-beginning-search
-autoload -U down-line-or-beginning-search
-zle -N up-line-or-beginning-search
-zle -N down-line-or-beginning-search
+# environment virables
+plug "$ZDOTDIR/core/zsh-exports"
 
-# FZF
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-# [ -f $ZDOTDIR/completion/_fnm ] && fpath+="$ZDOTDIR/completion/"
-# export FZF_DEFAULT_COMMAND='rg --hidden -l ""'
-compinit
+# prompt
+plug "$ZDOTDIR/core/zsh-prompt-greg"
 
+# hooks
+plug "$ZDOTDIR/core/zsh-hooks"
 
-# ------------------------ Colors -------------------------
-autoload -Uz colors && colors
+# alias
+plug "$ZDOTDIR/core/zsh-aliases"
 
-# ------------------------ Useful Functions ----------------------
-source "$ZDOTDIR/zsh-functions"
+# completion
+plug "$ZDOTDIR/core/zsh-completion"
 
-# ------------------------ Normal files to source ----------------------
-zsh_add_file "zsh-exports"
-zsh_add_file "zsh-vim-mode"
-zsh_add_file "zsh-aliases"
-# zsh_add_file "zsh-prompt"
-zsh_add_file "zsh-prompt-greg"
-zsh_add_file "zsh-hooks"
-zsh_add_file "zsh-bindkey"
-
-# ----------------------- Plugins ------------------------
-zsh_add_plugin "zsh-users/zsh-autosuggestions"
-zsh_add_plugin "zsh-users/zsh-syntax-highlighting"
-zsh_add_plugin "hlissner/zsh-autopair"
-# # zsh_add_completion "esc/conda-zsh-completion" false
-# # For more plugins: https://github.com/unixorn/awesome-zsh-plugins
-# # More completions https://github.com/zsh-users/zsh-completions
-
-# # Key-bindings
-# bindkey -s '^o' 'ranger^M'
-# bindkey -s '^f' 'zi^M'
-# bindkey -s '^s' 'ncdu^M'
-# # bindkey -s '^n' 'nvim $(fzf)^M'
-# # bindkey -s '^v' 'nvim\n'
-# bindkey -s '^z' 'zi^M'
-# bindkey '^[[P' delete-char
-# bindkey "^p" up-line-or-beginning-search # Up
-# bindkey "^n" down-line-or-beginning-search # Down
-# bindkey "^k" up-line-or-beginning-search # Up
-# bindkey "^j" down-line-or-beginning-search # Down
-# bindkey -r "^u"
-# bindkey -r "^d"
+# maps
+plug "$ZDOTDIR/core/zsh-bindkey"
 
 
+#---------------------- utility settings --------------------#
+#--- idea is similar to nvim plugin config
 
-# Edit line in vim with ctrl-e:
-autoload edit-command-line; zle -N edit-command-line
-# bindkey '^e' edit-command-line
+# fzf
+plug "$ZDOTDIR/utils/zsh-fzf"
 
+# nvim
+plug "$ZDOTDIR/utils/zsh-nvim"
 
-# Environment variables set everywhere
-export EDITOR="nvim"
+# rust
+plug "$ZDOTDIR/utils/zsh-rust"
 
-
-
-# --------------------- individual zshrc config ------------------------
-# TODO: put a condition check, if z-i-c file does not exist, echo "should create one!"
-zsh_add_file "zsh-binary-config"
-# zsh_add_file "zsh-individual-config"
-
-
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/etg/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/etg/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/etg/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/etg/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
+# conda
+plug "$ZDOTDIR/utils/zsh-conda"

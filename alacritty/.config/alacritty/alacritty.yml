@@ -1,27 +1,42 @@
 # Configuration for Alacritty, the GPU enhanced terminal emulator.
 
-# Import additional configuration files
-#
+
+#====================================================================#
+#==========      Import additional configuration files      =========#
+#====================================================================#
 # Imports are loaded in order, skipping all missing files, with the importing
 # file being loaded last. If a field is already present in a previous import, it
 # will be replaced.
 #
 # All imports must either be absolute paths starting with `/`, or paths relative
 # to the user's home directory starting with `~/`.
-#import:
+import:
 #  - /path/to/alacritty.yml
 
+  #------------ themes -----------#
+  # - ~/.config/alacritty/colors/gruvbox_light.yaml
+  # - ~/.config/alacritty/colors/solarized_light.yaml
+  # - ~/.config/alacritty/colors/seashells.yaml
+  # - ~/.config/alacritty/colors/gruvbox_material.yml
+  # - ~/.config/alacritty/colors/everforest_dark.yaml
+  # - ~/.config/alacritty/colors/everforest_light.yaml
+  - ~/.config/alacritty/colors/nightfox.yaml
+
+
+#====================================================================#
+#==========                    Env setting                  =========#
+#====================================================================#
 # Any items in the `env` entry below will be added as
 # environment variables. Some entries may override variables
 # set by alacritty itself.
-#env:
+# env:
   # TERM variable
   #
   # This value is used to set the `$TERM` environment variable for
   # each instance of Alacritty. If it is not present, alacritty will
   # check the local terminfo database and use `alacritty` if it is
   # available, otherwise `xterm-256color` is used.
-  #TERM: alacritty
+  # TERM: alacritty
 
 window:
   # Window dimensions (changes require restart)
@@ -47,8 +62,8 @@ window:
   # Blank space added around the window in pixels. This padding is scaled
   # by DPI and the specified value is always added at both opposing sides.
   padding:
-    x: 5
-    y: 0
+    x: 2
+    y: 1
 
   # Spread additional padding evenly around the terminal content.
   #dynamic_padding: false
@@ -81,7 +96,8 @@ window:
   # Values for `startup_mode` (macOS only):
   #   - SimpleFullscreen
   #startup_mode: Windowed
-  startup_mode: Fullscreen
+  # startup_mode: Fullscreen
+  startup_mode: SimpleFullscreen
 
   # Window title
   #title: Alacritty
@@ -122,7 +138,8 @@ font:
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
     # family: SauceCodePro Nerd Font
-    family: Delugia Mono
+    # family: Delugia Mono
+    family: Fisa Code
 
     # The `style` can be specified to pick a specific face.
     # style: Light
@@ -135,7 +152,8 @@ font:
     # If the bold family is not specified, it will fall back to the
     # value specified for the normal font.
     # family: SauceCodePro Nerd Font
-    family: Delugia Mono
+    # family: Delugia Mono
+    family: Fisa Code
 
     # The `style` can be specified to pick a specific face.
     style: Bold
@@ -172,7 +190,7 @@ font:
     style: Bold Italic
 
   # Point size
-  size: 13.0
+  size: 15.0
 
   # Offset is the extra space around each character. `offset.y` can be thought
   # of as modifying the line spacing, and `offset.x` as modifying the letter
@@ -396,16 +414,17 @@ font:
   # When set to `true`, selected text will be copied to the primary clipboard.
   #save_to_clipboard: false
 
-#cursor:
+cursor:
   # Cursor style
-  #style:
+  style:
     # Cursor shape
     #
     # Values for `shape`:
     #   - ▇ Block
     #   - _ Underline
     #   - | Beam
-    #shape: Block
+    # shape: Block
+    shape: Beam
 
     # Cursor blinking state
     #
@@ -908,41 +927,3 @@ key_bindings:
 
   # Highlight window damage information.
   #highlight_damage: false
-colors:
-  # COLORSCHEME: seashells.yaml
-  # Default colors
-  primary:
-    # hard contrast: background = '0x1d2021'
-    background: '#061923'
-    foreground: '#e5c49e'
-
-  # Colors the cursor will use if `custom_cursor_colors` is true
-  cursor:
-    text: '#061822'
-    cursor: '#feaf3c'
-
-  selection:
-    text: '#ffe9d7'
-    background: '#265b75'
-
-  # Normal colors
-  normal:
-    black: '#1d485f'
-    red: '#db662d'
-    green: '#008eab'
-    yellow: '#feaf3c'
-    blue: '#255a62'
-    magenta: '#77dbf4'
-    cyan: '#5fb1c2'
-    white: '#e5c49e'
-
-  # Bright colors
-  bright:
-    black: '#545d65'
-    red: '#dd998a'
-    green: '#739da8'
-    yellow: '#fedaae'
-    blue: '#0bc7e3'
-    magenta: '#c6e8f1'
-    cyan: '#97b9c0'
-    white: '#ffe9d7'
